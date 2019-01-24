@@ -277,7 +277,7 @@ With no arguments, turn off kube-ps1 status for this shell instance (default).
 EOF
 }
 
-kubeon() {
+kctxon() {
   if [[ "${1}" == '-h' || "${1}" == '--help' ]]; then
     _kubeon_usage
   elif [[ "${1}" == '-g' || "${1}" == '--global' ]]; then
@@ -291,7 +291,7 @@ kubeon() {
   KUBE_PS1_ENABLED=on
 }
 
-kubeoff() {
+kctxoff() {
   if [[ "${1}" == '-h' || "${1}" == '--help' ]]; then
     _kubeoff_usage
   elif [[ "${1}" == '-g' || "${1}" == '--global' ]]; then
@@ -307,7 +307,7 @@ kubeoff() {
 }
 
 # Build our prompt
-kube_ps1() {
+kctx_ps1() {
   [[ "${KUBE_PS1_ENABLED}" == "off" ]] && return
   [[ -z "${KUBE_PS1_CONTEXT}" ]] && return
 
